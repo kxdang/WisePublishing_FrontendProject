@@ -1,0 +1,62 @@
+.subscribe {
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__form--btn {
+    align-self: flex-start;
+  }
+
+  &__form--options {
+    margin: 1rem auto;
+  }
+
+  &__form--subscribe-btn {
+    margin-top: 2rem;
+    align-self: center;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: $moneywise-colour;
+    padding: 1.5rem 4rem;
+    color: white;
+    font-size: 1.7rem;
+    border-radius: 10rem;
+    font-family: $font-secondary;
+    outline: none;
+    transition: all 0.2s;
+    top: 0;
+  }
+
+  &__form--subscribe-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 1rem 2rem rgba(black, 0.2);
+  }
+
+  &__form--subscribe-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 1rem 2rem rgba(black, 0.2);
+  }
+
+  &__form--options {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    color: #272727;
+    outline: blueviolet;
+  }
+
+  &__form__input {
+    font-size: 1.5rem;
+    padding: 1rem;
+    border: none;
+    border-bottom: 3px solid transparent;
+  }
+
+  &__form__input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(black, 0.1);
+    border-bottom: 3px solid $moneywise-colour;
+  }
+}

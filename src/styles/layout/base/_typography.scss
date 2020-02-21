@@ -1,0 +1,22 @@
+h1 {
+  font-family: $font-primary;
+  font-weight: 400;
+  font-size: 3rem;
+  color: $font-color;
+}
+
+h2 {
+  font-family: $font-primary;
+  font-size: 3rem;
+  font-weight: 400;
+  color: $font-color;
+}
+
+p {
+  font-family: $font-secondary;
+  font-size: 1.6rem;
+  color: $font-color;
+  // font-weight: 200;
+  margin-bottom: 2rem;
+  line-height: 3rem;
+}

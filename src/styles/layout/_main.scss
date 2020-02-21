@@ -1,0 +1,43 @@
+.main {
+  padding: 6rem;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+
+  @media only screen and (max-width: $bp-largest) {
+    grid-template-columns: 1fr;
+  }
+
+  &__article {
+    padding: 4rem;
+    // width: 70%;
+    max-width: 70rem;
+    margin: 0 auto;
+  }
+
+  &__form {
+    background-color: #eee;
+    font-size: 1.6rem;
+    font-family: $font-primary;
+    color: $font-color;
+    margin: 5rem 3rem;
+    padding: 2rem;
+    align-self: flex-start;
+    border: 3px solid #eee;
+    border-radius: 2rem;
+    box-shadow: 0 1rem 1rem rgba(black, 0.1);
+    position: sticky;
+    top: 15rem;
+    height: 54rem;
+
+    @media only screen and (max-width: $bp-largest) {
+      width: 50rem;
+      margin: 0 auto;
+    }
+  }
+}
+
+.image {
+  height: 40rem;
+  padding-left: 10rem;
+  padding-bottom: 4rem;
+}

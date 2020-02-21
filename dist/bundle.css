@@ -1,0 +1,131 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased; }
+
+.subscribe__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.subscribe__form--btn {
+  align-self: flex-start; }
+
+.subscribe__form--options {
+  margin: 1rem auto; }
+
+.subscribe__form--subscribe-btn {
+  margin-top: 2rem;
+  align-self: center;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: #780095;
+  padding: 1.5rem 4rem;
+  color: white;
+  font-size: 1.7rem;
+  border-radius: 10rem;
+  font-family: "Montserrat", sans-serif;
+  outline: none;
+  transition: all 0.2s;
+  top: 0; }
+
+.subscribe__form--subscribe-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.subscribe__form--subscribe-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.subscribe__form--options {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  color: #272727;
+  outline: blueviolet; }
+
+.subscribe__form__input {
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: none;
+  border-bottom: 3px solid transparent; }
+
+.subscribe__form__input:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #780095; }
+
+.main {
+  padding: 6rem;
+  display: grid;
+  grid-template-columns: 3fr 1fr; }
+  .main__article {
+    padding: 4rem;
+    max-width: 70rem;
+    margin: 0 auto; }
+  .main__form {
+    background-color: #eee;
+    font-size: 1.6rem;
+    font-family: "Roboto Slab", serif;
+    color: #313b44;
+    margin: 0 3rem;
+    padding: 2rem;
+    align-self: flex-start;
+    border: 3px solid #eee;
+    border-radius: 5%;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 20rem;
+    height: 50rem; }
+
+.navigation {
+  background: #eee;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0; }
+  .navigation__icon {
+    color: black; }
+
+.tickers {
+  display: flex; }
+
+.ticker {
+  margin-right: 2rem; }
+  .ticker__price {
+    margin-bottom: 0; }
+
+h1 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  font-size: 3rem;
+  color: #313b44; }
+
+h2 {
+  font-family: "Roboto Slab", serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #313b44; }
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  color: #313b44;
+  margin-bottom: 2rem;
+  line-height: 3rem; }
+
+.mb-sm {
+  margin-bottom: 2rem; }
+
+.mb-xs {
+  margin-bottom: 1rem; }
+

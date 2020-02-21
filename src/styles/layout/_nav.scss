@@ -1,0 +1,37 @@
+.navigation {
+  background: #eee;
+  display: flex;
+  justify-content: space-between;
+  // position: sticky;
+  // top: 0;
+  height: 11rem;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    margin-left: 6rem;
+  }
+}
+
+//Tickers
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+.tickers {
+  display: flex;
+}
+
+.ticker {
+  margin-right: 2rem;
+  &__name {
+  }
+
+  &__price {
+    margin-bottom: 0;
+  }
+}

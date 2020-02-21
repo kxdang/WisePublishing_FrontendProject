@@ -1,0 +1,35 @@
+//FONT VARIABLES
+
+$font-primary: "Roboto Slab", serif;
+$font-secondary: "Montserrat", sans-serif;
+
+//COLOURS
+$font-color: #313b44;
+$moneywise-colour: #780095;
+
+//RESPONSIVE BREAKPOINTS
+$bp-largest: 72em;
+$bp-medium: 32em;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; //1 rem = 10px
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+
+  // @media only screen and (max-width: $bp-medium) {
+  //   font-size: 50%;
+  // }
+
+  // @media only screen and (max-width: $bp-largest) {
+  //   font-size: 62.5%;
+  // }
+}
