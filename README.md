@@ -7,3 +7,6 @@ Wise Publishing Front End Developer Challenge
 <code>npm install</code>
 
 <code>npm run start:dev</code>
+
+
+![Demo](WisePublishing.gif)
