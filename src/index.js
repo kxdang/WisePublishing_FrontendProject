@@ -1,4 +1,6 @@
 import "./styles/main.scss";
+import "./emailValidation";
+import "./formSubmission";
 
 console.log("Hello World");
 
@@ -22,32 +24,7 @@ const makeRequestURI_CRYPTO = (type, tickers) => {
   });
 };
 
-//EMAIL VALIDATION
-
-const invalidEmail = document.getElementById("invalidEmail");
-
-const inputValidation = e => {
-  const input = e.target.value;
-
-  if (input == "") {
-    invalidEmail.setAttribute("class", "invalidNone");
-    return;
-  }
-
-  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input)) {
-    console.log("yay email");
-    invalidEmail.setAttribute("class", "invalidNone");
-  } else {
-    invalidEmail.setAttribute("class", "invalid");
-    console.log("Not an email");
-  }
-};
-
-const emailInputForm = document.getElementById("email");
-
-emailInputForm.addEventListener("blur", inputValidation);
-
-//2020-02-19
+//GENERATE DATES
 let currentDate = new Date();
 const yyyy = currentDate.getFullYear();
 let dd = currentDate.getDate();
@@ -63,12 +40,10 @@ if (mm < 10) {
 
 let today = `${yyyy}-${mm}-${dd}`;
 let yesterday = `${yyyy}-${mm}-${dd - 1}`;
-console.log(today);
-console.log(yesterday);
 
 const requestData = () => {
-  const stockRequestURLs = makeRequestURI_STOCKS(STOCK_TYPE, STOCK_TICKERS); //['https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=demo', https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=GOOG&apikey=demo]
-  const cryptoRequestURLs = makeRequestURI_CRYPTO(CRYPTO_TYPE, CRYPTO_TICKERS); //[https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=BTC&market=USD&apikey=JQ1LE8WZCWJRAMXL]
+  const stockRequestURLs = makeRequestURI_STOCKS(STOCK_TYPE, STOCK_TICKERS);
+  const cryptoRequestURLs = makeRequestURI_CRYPTO(CRYPTO_TYPE, CRYPTO_TICKERS);
 
   const requests = [];
 
@@ -81,8 +56,6 @@ const requestData = () => {
             console.error("Limit hit");
             return Promise.reject("Error Limit Hit");
           }
-          // console.log("Stonks", data);
-          // console.log("price", data["Time Series (Daily)"][today]["1. open"]);
 
           const stockInfo = {};
           stockInfo.ticker = data["Meta Data"]["2. Symbol"];
@@ -141,14 +114,13 @@ const requestData = () => {
 };
 
 const main = async () => {
-  const data = await requestData(); //RETURNS array of PROMISE [promise, promise, promise] ==> [responses,responses,responses]
-  console.log(data);
+  const data = await requestData();
+  //RETURNS array of PROMISE [promise, promise, promise] ==> [responses,responses,responses]
+
   const container = document.querySelector(".tickers");
 
   const fragment = document.createDocumentFragment();
   //reducing reflow = expensive (need to optimize) with fragments
-
-  //Be cautious of reflow DOM with forEach using fragments
 
   data.forEach(info => {
     const ticker = document.createElement("div");
@@ -164,7 +136,6 @@ const main = async () => {
 
     const span = document.createElement("span");
 
-    // prettier-ignore
     const percentDiff = document.createElement("p");
 
     percentDiff.setAttribute(

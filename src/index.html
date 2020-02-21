@@ -13,21 +13,7 @@
       <div class="navigation__logo">
         <img src="./styles/img/logo.svg" alt="logo" />
       </div>
-      <div class="tickers">
-        <!-- <div class="ticker">
-          <h1 class="ticker__name">TICK</h1>
-          <p class="ticker__price">$1234 USD &uarr;</p>
-          <p class="ticker__price">+(38%)</p>
-        </div>
-        <div class="ticker">
-          <h1 class="ticker__name">TICK</h1>
-          <p class="ticker__price">$1234 USD &uarr;</p>
-        </div>
-        <div class="ticker">
-          <h1 class="ticker__name">TICK</h1>
-          <p class="ticker__price">$1234 USD &uarr;</p>
-        </div> -->
-      </div>
+      <div class="tickers"></div>
     </nav>
     <div class="main">
       <article class="main__article">
@@ -126,11 +112,11 @@
             required
           />
 
-          <label class="mb-xs" for="LastName">Last Name</label>
+          <label class="mb-xs" for="lastName">Last Name</label>
           <input
             type="text"
-            name="LastName"
-            id="LastName"
+            name="lastName"
+            id="lastName"
             placeholder="Last Name"
             class="subscribe__form__input mb-xs"
             required
@@ -146,6 +132,7 @@
             required
           />
           <p id="invalidEmail" class="invalidNone">Invalid email</p>
+          <p class="home">Are you a home owner?</p>
           <div class="subscribe__form--options">
             <input
               type="radio"
@@ -155,13 +142,7 @@
             />
             <label for="homeOwnerYes" class="subscribe__form--btn">Yes</label>
 
-            <input
-              type="radio"
-              id="homeOwnerNo"
-              name="homeowner"
-              value="no"
-              required
-            />
+            <input type="radio" id="homeOwnerNo" name="homeowner" value="no" />
             <label for="homeOwnerNo" class="subscribe__form--btn">No</label>
           </div>
 
