@@ -66,8 +66,7 @@ const requestData = () => {
           stockInfo.priceDifference =
             stockInfo.currentPrice - stockInfo.yesterdayPrice;
 
-          stockInfo.pricePercentageChange =
-            (stockInfo.priceDifference / stockInfo.yesterdayPrice) * 100;
+          stockInfo.pricePercentageChange = (stockInfo.priceDifference / stockInfo.yesterdayPrice) * 100;
 
           return Promise.resolve(stockInfo);
         })
@@ -91,18 +90,14 @@ const requestData = () => {
           cryptoInfo.ticker = data["Meta Data"]["2. Digital Currency Code"];
           cryptoInfo.currentPrice =
             data["Time Series (Digital Currency Daily)"][today][
-              "1a. open (USD)"
+            "1a. open (USD)"
             ];
           cryptoInfo.yesterdayPrice =
-            data["Time Series (Digital Currency Daily)"][yesterday][
-              "1a. open (USD)"
-            ];
+            data["Time Series (Digital Currency Daily)"][yesterday]["1a. open (USD)"];
 
-          cryptoInfo.priceDifference =
-            cryptoInfo.currentPrice - cryptoInfo.yesterdayPrice;
+          cryptoInfo.priceDifference = cryptoInfo.currentPrice - cryptoInfo.yesterdayPrice;
 
-          cryptoInfo.pricePercentageChange =
-            (cryptoInfo.priceDifference / cryptoInfo.yesterdayPrice) * 100;
+          cryptoInfo.pricePercentageChange = (cryptoInfo.priceDifference / cryptoInfo.yesterdayPrice) * 100;
 
           console.log("Crypto:", cryptoInfo.pricePercentageChange);
           return Promise.resolve(cryptoInfo);
@@ -116,8 +111,8 @@ const requestData = () => {
 const main = async () => {
   const data = await requestData();
   //RETURNS array of PROMISE [promise, promise, promise] ==> [responses,responses,responses]
-
   const container = document.querySelector(".tickers");
+
 
   const fragment = document.createDocumentFragment();
   //reducing reflow = expensive (need to optimize) with fragments
@@ -146,7 +141,7 @@ const main = async () => {
       2
     )} (${parseFloat(info.pricePercentageChange).toFixed(0)}%) ${
       info.priceDifference > 0 ? "↑" : "↓"
-    }`;
+      }`;
 
     ticker.append(name, price, percentDiff);
     fragment.append(ticker);
