@@ -11,6 +11,15 @@ html {
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased; }
 
+.footer {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  font-family: "Roboto Slab", serif;
+  background-color: #eee;
+  height: 4rem;
+  padding: 1rem; }
+
 .subscribe__form {
   display: flex;
   flex-direction: column;
@@ -50,7 +59,7 @@ html {
   font-size: 1.5rem;
   padding: 0.5rem;
   color: #272727;
-  outline: blueviolet; }
+  outline: #780095; }
 
 .subscribe__form__input {
   font-size: 1.5rem;
@@ -67,6 +76,9 @@ html {
   padding: 6rem;
   display: grid;
   grid-template-columns: 3fr 1fr; }
+  @media only screen and (max-width: 72em) {
+    .main {
+      grid-template-columns: 1fr; } }
   .main__article {
     padding: 4rem;
     max-width: 70rem;
@@ -76,25 +88,47 @@ html {
     font-size: 1.6rem;
     font-family: "Roboto Slab", serif;
     color: #313b44;
-    margin: 0 3rem;
+    margin: 5rem 3rem;
     padding: 2rem;
     align-self: flex-start;
     border: 3px solid #eee;
-    border-radius: 5%;
+    border-radius: 2rem;
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
     position: sticky;
-    top: 20rem;
-    height: 50rem; }
+    top: 15rem;
+    height: 54rem; }
+    @media only screen and (max-width: 72em) {
+      .main__form {
+        width: 50rem;
+        margin: 0 auto; } }
+
+.image {
+  height: 40rem;
+  padding-left: 10rem;
+  padding-bottom: 4rem; }
+
+.invalid {
+  margin-bottom: 0;
+  color: red; }
+
+.invalidNone {
+  display: none; }
 
 .navigation {
   background: #eee;
-  height: auto;
   display: flex;
   justify-content: space-between;
-  position: sticky;
-  top: 0; }
-  .navigation__icon {
-    color: black; }
+  height: 11rem; }
+  .navigation__logo {
+    display: flex;
+    align-items: center;
+    margin-left: 6rem; }
+
+.red {
+  color: red; }
+
+.green {
+  color: green; }
 
 .tickers {
   display: flex; }
@@ -122,6 +156,11 @@ p {
   color: #313b44;
   margin-bottom: 2rem;
   line-height: 3rem; }
+
+.home {
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  margin-bottom: 0rem; }
 
 .mb-sm {
   margin-bottom: 2rem; }

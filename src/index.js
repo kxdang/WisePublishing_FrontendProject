@@ -2,8 +2,6 @@ import "./styles/main.scss";
 import "./emailValidation";
 import "./formSubmission";
 
-console.log("Hello World");
-
 const API_KEY = "JQ1LE8WZCWJRAMXL";
 const STOCK_TICKERS = ["MSFT", "GOOG"];
 const CRYPTO_TICKERS = ["BTC"];
@@ -84,7 +82,7 @@ const requestData = () => {
           }
 
           const cryptoInfo = {};
-          console.log("Crypto:", data);
+
 
           // prettier-ignore
           cryptoInfo.ticker = data["Meta Data"]["2. Digital Currency Code"];
@@ -99,7 +97,7 @@ const requestData = () => {
 
           cryptoInfo.pricePercentageChange = (cryptoInfo.priceDifference / cryptoInfo.yesterdayPrice) * 100;
 
-          console.log("Crypto:", cryptoInfo.pricePercentageChange);
+
           return Promise.resolve(cryptoInfo);
         })
     );
